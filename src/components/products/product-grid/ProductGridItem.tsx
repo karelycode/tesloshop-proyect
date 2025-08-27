@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Product } from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,17 +10,26 @@ interface Props {
 }
 
 export const ProductGridItem = ({ product }: Props) => {
+  const [displayImage, setDisplayImage] = useState(product.images[0]);
+
   return (
     <div className="rounded-md overflow-hidden fade-in">
-      <Image
-        src={`/products/${product.images[0]}`}
-        alt={product.title}
-        className="w-full object-cover"
-        width={500}
-        height={500}
-      />
+      <Link href={`/products/${product.slug}`}>
+        <Image
+          src={`/products/${displayImage}`}
+          alt={product.title}
+          className="w-full object-cover rounded"
+          width={500}
+          height={500}
+          onMouseEnter={() => setDisplayImage(product.images[1])}
+          onMouseLeave={() => setDisplayImage(product.images[0])}
+        />
+      </Link>
       <div className="p-4 flex flex-col">
-        <Link href={`/products/${product.slug}`}>
+        <Link
+          className="hover:text-blue-600"
+          href={`/products/${product.slug}`}
+        >
           <h3>{product.title}</h3>
         </Link>
         <span className="font-bold">${product.price}</span>
