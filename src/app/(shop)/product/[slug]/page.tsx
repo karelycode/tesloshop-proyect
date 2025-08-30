@@ -1,4 +1,4 @@
-import { SizeSelector } from "@/components";
+import { SizeSelector, QuantitySelector } from "@/components";
 import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
@@ -33,10 +33,9 @@ export default function ({ params }: Props) {
           availableSizes={product.sizes}
         />
         {/* Selector de cantidad */}
-
+        <QuantitySelector quantity={1} />
         {/* Botón de agregar al carrito */}
         <button className="my-5 btn-primary">Agregar al carrito</button>
-
         {/* Descripción */}
         <h3 className="font-bold text-sm">Descripción: </h3>
         <p className="font-light">{product.description}</p>
