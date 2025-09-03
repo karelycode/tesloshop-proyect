@@ -21,7 +21,7 @@ export const TopMenu = () => {
         </Link>
       </div>
       {/* Add your menu items here */}
-      <div>
+      <div className="hidden md:block">
         <Link
           className="m-2 p-2 rounded-md transition-all hover:bg-gray-200"
           href="/category/men"
