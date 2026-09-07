@@ -4,11 +4,16 @@ import React, { useState } from "react";
 import { Swiper as SwiperObject } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+// @ts-ignore Swiper CSS is handled by the bundler.
 import "swiper/css";
+// @ts-ignore Swiper CSS is handled by the bundler.
 import "swiper/css/free-mode";
+// @ts-ignore Swiper CSS is handled by the bundler.
 import "swiper/css/navigation";
+// @ts-ignore Swiper CSS is handled by the bundler.
 import "swiper/css/thumbs";
 
+// @ts-ignore Local CSS is handled by the bundler.
 import "./slideshow.css";
 import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import Image from "next/image";
