@@ -13,6 +13,10 @@ export default async function Home({ searchParams }: Props) {
 
   const { products } = await getPaginatedProductsWithImages({ page });
 
+  if (products.length === 0) {
+    redirect("/");
+  }
+
   return (
     <>
       <Title title="Tienda" subtitle="Todo los productos" className="mb-2" />
