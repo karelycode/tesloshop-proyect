@@ -1,5 +1,6 @@
 import { getPaginatedProductsWithImages } from "@/actions/product/product-pagination";
 import { Title, ProductGrid } from "@/components";
+import { redirect } from "next/navigation";
 
 interface Props {
   searchParams: {
