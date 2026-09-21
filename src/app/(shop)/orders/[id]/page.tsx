@@ -17,7 +17,7 @@ interface Props {
   };
 }
 
-export default function ({ params }: Props) {
+export default function OrderByIdPage({ params }: Props) {
   const { id } = params;
 
   return (
@@ -34,7 +34,7 @@ export default function ({ params }: Props) {
                 {
                   "bg-red-500": false,
                   "bg-green-500": true,
-                }
+                },
               )}
             >
               <IoCardOutline size={30} />
@@ -104,7 +104,7 @@ export default function ({ params }: Props) {
                   {
                     "bg-red-500": false,
                     "bg-green-500": true,
-                  }
+                  },
                 )}
               >
                 <IoCardOutline size={30} />
