@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { inter } from "@/config/fonts";
+// @ts-expect-error Next.js processes this global stylesheet import.
 import "./globals.css";
 
 export const metadata: Metadata = {

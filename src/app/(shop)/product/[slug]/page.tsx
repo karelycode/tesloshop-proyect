@@ -9,12 +9,32 @@ import {
   StockLabel,
 } from "@/components";
 import { titleFont } from "@/config/fonts";
+import { Metadata, ResolvingMetadata } from "next";
 
 import { notFound } from "next/navigation";
 
 interface Props {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const slug = params.slug;
+  // fetch post information
+  const product = await getProductBySlug(slug);
+
+  return {
+    title: product?.title ?? "Producto no encontrado",
+    description: product?.description ?? "No se encontró el producto",
+    openGraph: {
+      title: product?.title ?? "Producto no encontrado",
+      description: product?.description ?? "No se encontró el producto",
+      images: ["/products/${product?.images[1]}"],
+    },
   };
 }
 
